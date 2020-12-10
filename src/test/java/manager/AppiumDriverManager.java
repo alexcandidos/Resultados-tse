@@ -31,7 +31,7 @@ public class AppiumDriverManager {
             desiredCapabilities.setCapability(MobileCapabilityType.APP, APK_PATH);
             desiredCapabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, "true");
             try {
-                driver = new AndroidDriver<MobileElement>(new URL(APPIUM_URL_SERVER), desiredCapabilities);
+                driver = new AndroidDriver<>(new URL(APPIUM_URL_SERVER), desiredCapabilities);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -48,10 +48,6 @@ public class AppiumDriverManager {
 
     public static void closeDriver(){
         driver.quit();
-    }
-
-    public static void relaunchApp(){
-        driver.launchApp();
     }
 
     public static WebDriverWait getWait(long defaultTimeout) {
