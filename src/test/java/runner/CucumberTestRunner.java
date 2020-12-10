@@ -2,6 +2,9 @@ package runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import manager.AppiumDriverManager;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
@@ -25,4 +28,15 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber-html-report"}
         )
 class CucumberTestRunner {
+
+        @BeforeClass
+        public static void setUp(){
+                AppiumDriverManager.getDriver();
+        }
+
+        @AfterClass
+        public static void tearDown(){
+                AppiumDriverManager.closeDriver();
+
+        }
 }
