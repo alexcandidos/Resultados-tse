@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AppiumDriver {
+public class AppiumDriverManager {
 
     private static final String APK_PATH = "Users/alex/Documents/projects/personal/appium/java/Resultados/src/main/resources/apk/Resultados.apk";
     private static final String APPIUM_URL_SERVER = "http://localhost:4723/wd/hub";
