@@ -20,11 +20,11 @@ task runFeatures(){
 
     doLast {
         javaexec {
-
             main = "cucumber.api.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
-                    '--plugin','io.qameta.allure.cucumberjvm.AllureCucumber4Jvm',
+                    '--plugin', 'pretty',
+                    '--plugin','html:target/cucumber-html-report',
                     '--monochrome','--strict',
                     '--glue', 'stepDefinition',
                     'src/main/resources/features/'
@@ -35,11 +35,8 @@ task runFeatures(){
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    testCompile group: 'io.cucumber', name: 'cucumber-java', version: '6.9.0'
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '6.9.0'
+    compile group: 'io.cucumber', name: 'cucumber-java', version: '6.9.0'
     compile group: 'io.appium', name: 'java-client', version: '7.4.1'
-    compile group: 'io.qameta.allure', name: 'allure-cucumber-jvm', version: '2.13.7'
-
-
 
 }
