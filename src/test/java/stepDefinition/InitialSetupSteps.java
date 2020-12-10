@@ -8,19 +8,17 @@ import pages.InitialSetupPage;
 import pages.MainPage;
 import pages.SearchPage;
 
-import java.net.MalformedURLException;
-
 public class InitialSetupSteps {
 
-    InitialSetupPage initialSetupPage;
-    MainPage mainPage;
-    SearchPage searchPage;
+    private InitialSetupPage initialSetupPage;
+    private MainPage mainPage;
+    private SearchPage searchPage;
 
     @Given("I launch the app by the first time")
-    public void launchApp() throws MalformedURLException, InterruptedException {
-        initialSetupPage = new InitialSetupPage(AppiumDriverManager.createDriver("android"));
-        mainPage = new MainPage(AppiumDriverManager.createDriver("android"));
-        searchPage = new SearchPage(AppiumDriverManager.createDriver("android"));
+    public void launchApp() {
+        initialSetupPage = new InitialSetupPage(AppiumDriverManager.getDriver());
+        mainPage = new MainPage(AppiumDriverManager.getDriver());
+        searchPage = new SearchPage(AppiumDriverManager.getDriver());
     }
 
     @When("I click on {string}")
