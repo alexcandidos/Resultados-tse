@@ -37,6 +37,5 @@ class CucumberTestRunner {
         @AfterClass
         public static void tearDown(){
                 AppiumDriverManager.closeDriver();
-
         }
 }
