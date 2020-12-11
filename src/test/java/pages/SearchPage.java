@@ -1,6 +1,7 @@
 package pages;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -19,6 +20,9 @@ public class SearchPage {
         wait = AppiumDriverManager.getWait();
     }
 
+    private final String turno1Str = "15/11/2020";
+    private final String turno2Str = "29/11/2020";
+
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").textContains(\"Todas\")")
     public MobileElement ufList;
 
@@ -28,29 +32,32 @@ public class SearchPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\").textContains(\"OK\")")
     public MobileElement okBtn;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\").textContains(\"29/11/2020\")")
-    public MobileElement turno2;
+    private String turnoSelectorRegex = "new UiSelector().className(\"android.widget.Button\").textContains(\"%s\")";
 
+    private String stateSelectorRegex = "new UiSelector().className(\"android.widget.RadioButton\").textContains(\"%s\")";
 
+    public void selectState(String option){
 
+        String stateSelector = String.format(stateSelectorRegex, option);
 
-
-    public void selectUf(){
         ufList.click();
-    }
 
-    public void state(){
-
-        //driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().textContains(\"UF\").className(\"android.view.View\").scrollable(true)).scrollIntoView(new UiSelector().textContains(\"PE\"))"));
-        //driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().textContains(\"UF\").className(\"android.view.View\").scrollable(true)).flingToEnd(10)"));
-
-        //driver.findElement(By.xpath("//android.widget.RadioButton[@text=\"PE\"]")).click();
-
-        state.click();
+        driver.findElement(new MobileBy.ByAndroidUIAutomator(stateSelector)).click();
 
         okBtn.click();
+    }
 
-        turno2.click();
+    public void selectTurno(String option){
+        String turnoSelector = "";
+
+        if(option.equals("1")){
+            turnoSelector = String.format(turnoSelectorRegex, turno1Str);
+        }else if(option.equals("2")){
+            turnoSelector = String.format(turnoSelectorRegex, turno2Str);
+        }
+
+        driver.findElement(new MobileBy.ByAndroidUIAutomator(turnoSelector)).click();
+
     }
 
 
