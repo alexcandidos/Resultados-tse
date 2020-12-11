@@ -22,6 +22,9 @@ public class MainPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\")")
     public MobileElement selectPlace;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Selecione uma localidade acima\")")
+    public MobileElement selectPlaceStr;
+
     public void selectPlace(){
         selectPlace.click();
     }
