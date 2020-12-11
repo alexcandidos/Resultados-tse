@@ -1,17 +1,17 @@
-###Resultados - TSE 2020
+## :inbox_tray: Resultados - TSE 2020 
 Mobile Automation project based on Java + Appium + Cucumber.
 
-####Requirements
+## :ballot_box_with_check: Requirements
 * Java 1.8
 * Android Emulator
 * Appium
 
 For more information about how to configure Appium, please check this awesome documentation https://github.com/clarabez/appium-en from [@clarabez][https://github.com/clarabez]
 
-####Project Structure
+## :triangular_ruler: Project Structure
 TBD...
 
-####How to run the project?
+## :rocket: How to run the project?
 1. Launch the Android Emulator;
 2. Launch the Appium Server;
 
