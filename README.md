@@ -10,31 +10,33 @@ Mobile Automation project based on Java + Appium + Cucumber.
 For more information about how to set up the environment to use Appium for functional test automation on mobile devices, plus how to emulate an Android device using Android Studio, please check this awesome documentation https://github.com/clarabez/appium-en from my friend :woman_teacher: [@clarabez][https://github.com/clarabez].
 
 ## :triangular_ruler: Project Structure
+```bash
 src
- ┣ main
- ┃ ┣ java
- ┃ ┗ resources
- ┃ ┃ ┣ apk
- ┃ ┃ ┃ ┗ Resultados.apk
- ┃ ┃ ┗ features
- ┃ ┃ ┃ ┗ Resultados.feature
- ┗ test
- ┃ ┣ java
- ┃ ┃ ┣ manager
- ┃ ┃ ┃ ┗ AppiumDriverManager.java
- ┃ ┃ ┣ pages
- ┃ ┃ ┃ ┣ InitialSetupPage.java
- ┃ ┃ ┃ ┣ MainPage.java
- ┃ ┃ ┃ ┗ SearchPage.java
- ┃ ┃ ┣ runner
- ┃ ┃ ┃ ┗ CucumberTestRunner.java
- ┃ ┃ ┗ stepDefinition
- ┃ ┃ ┃ ┣ Hooks.java
- ┃ ┃ ┃ ┣ InitialSetupSteps.java
- ┃ ┃ ┃ ┗ MainSteps.java
- ┃ ┗ resources
- ┃ ┃ ┗ cucumber.properties
-
+📦 src
+ ┣ 📂 main
+ ┃ ┣ 📂 java
+ ┃ ┗ 📂 resources
+ ┃ ┃ ┣ 📂 apk
+ ┃ ┃ ┃ ┗ 📜 Resultados.apk
+ ┃ ┃ ┗ 📂 features
+ ┃ ┃ ┃ ┗ 📜 Resultados.feature
+ ┗ 📂 test
+ ┃ ┣ 📂 java
+ ┃ ┃ ┣ 📂 manager
+ ┃ ┃ ┃ ┗ 📜 AppiumDriverManager.java
+ ┃ ┃ ┣ 📂 pages
+ ┃ ┃ ┃ ┣ 📜 InitialSetupPage.java
+ ┃ ┃ ┃ ┣ 📜 MainPage.java
+ ┃ ┃ ┃ ┗ 📜 SearchPage.java
+ ┃ ┃ ┣ 📂 runner
+ ┃ ┃ ┃ ┗ 📜 CucumberTestRunner.java
+ ┃ ┃ ┗ 📂 stepDefinition
+ ┃ ┃ ┃ ┣ 📜 Hooks.java
+ ┃ ┃ ┃ ┣ 📜 InitialSetupSteps.java
+ ┃ ┃ ┃ ┗ 📜 MainSteps.java
+ ┃ ┗ 📂 resources
+ ┃ ┃ ┗ 📜 cucumber.properties
+```
 ## :rocket: How to run the project?
 1. Launch the Android Emulator;
 2. Launch the Appium Server;
