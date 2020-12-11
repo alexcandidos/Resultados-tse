@@ -11,7 +11,6 @@ For more information about how to set up the environment to use Appium for funct
 
 ## :triangular_ruler: Project Structure
 ```bash
-src
 📦 src
  ┣ 📂 main
  ┃ ┣ 📂 java
