@@ -33,12 +33,17 @@ public class InitialSetupSteps {
 
     @Then("I am on the app home page")
     public void homePageReached() {
-        mainPage.selectPlace();
+        assert mainPage.selectPlaceStr.isDisplayed();
     }
 
-    @Then("I select the uf")
-    public void selectUf() {
-        searchPage.selectUf();
-        searchPage.state();
+    @Then("I select a location by UF {string}")
+    public void selectLocationByUF(String option) {
+        mainPage.selectPlace();
+        searchPage.selectState(option);
+    }
+
+    @Then("I select the turno {string}")
+    public void selectTurno(String option) {
+        searchPage.selectTurno(option);
     }
 }
