@@ -11,14 +11,12 @@ import pages.SearchPage;
 public class InitialSetupSteps {
 
     private InitialSetupPage initialSetupPage;
-    private MainPage mainPage;
-    private SearchPage searchPage;
+    private MainPage mainPage = new MainPage(AppiumDriverManager.getDriver());;
+    private SearchPage searchPage = new SearchPage(AppiumDriverManager.getDriver());
 
     @Given("I launch the app by the first time")
     public void launchApp() {
         initialSetupPage = new InitialSetupPage(AppiumDriverManager.getDriver());
-        mainPage = new MainPage(AppiumDriverManager.getDriver());
-        searchPage = new SearchPage(AppiumDriverManager.getDriver());
     }
 
     @When("I click on {string}")
