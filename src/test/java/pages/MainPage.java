@@ -29,4 +29,16 @@ public class MainPage {
         selectPlace.click();
     }
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"100,00% das seções totalizadas\")")
+    public MobileElement percentStr;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Eleito\")")
+    public MobileElement electedStr;
+
+    @AndroidFindBy(xpath = "//android.widget.ListView[1]//android.widget.Image")
+    public MobileElement firstCandidateAvatar;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Favoritos\")")
+    public MobileElement favoriteTab;
+
 }
